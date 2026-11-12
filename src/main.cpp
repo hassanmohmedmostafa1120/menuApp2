@@ -14,7 +14,8 @@ int main() {
 
     menu menuArray[3]={m1,m2,m3};
    
-    Employee emp [10] ;
+    Employee emp [10] ; 
+   
     int empCount = 0; 
     runMenu(menuArray, 3, emp, empCount );
 

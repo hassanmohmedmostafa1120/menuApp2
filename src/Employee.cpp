@@ -3,12 +3,20 @@
 #include "../include/employee.hpp"
 
 using namespace std;
-
+Employee::Employee(){};
+ Employee::Employee(int empId, const char empName[], double empSalary)
+       
+    {
+        id = empId;
+        std::strcpy(name, empName);
+        salary = empSalary;
+     
+    }
 void Employee::addEmployee(int empId, const char empName[], double empSalary)
 {
     id = empId;
 
-    strcpy(name, empName);
+    std::strcpy(name, empName);
 
     salary = empSalary;
 }

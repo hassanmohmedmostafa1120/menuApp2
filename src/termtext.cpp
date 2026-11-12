@@ -141,20 +141,22 @@ int moveMenuArrow(){
          }
          else
             {
-                  Employee emp;
+                  //Employee emp;
+                  int empId;
+                  char empName[50];
+                  double empSalary;
 
                     cout << "Enter Employee ID: ";
-                    cin >> emp.id;
+                    cin >> empId;
 
                     cout << "Enter Employee Name: ";
-                     cin >> emp.name;
+                     cin >> empName;
 
                     cout << "Enter Employee Salary: ";
-                     cin >> emp.salary;
+                     cin >> empSalary;
 
-                    emp.addEmployee(emp.id, emp.name, emp.salary);
-
-                    emps[empCount] = emp;
+                 //   Employee (empId, empName, empSalary);
+                    emps[empCount] = Employee(empId, empName, empSalary);
                     empCount++;
 
                     cout << "Employee added successfully!" << endl;
