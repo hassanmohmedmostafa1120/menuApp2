@@ -2,6 +2,7 @@
 #include "../include/readhelper.hpp"
 #include <iostream>
 #include <cstdio>
+#include "../include/employee.hpp"
 using namespace std;
 using namespace helper;
 namespace advancedPrint{
@@ -101,8 +102,8 @@ int moveMenuArrow(){
 
 
 
-void runMenu(menu menuArray[], int size)
-{
+    void runMenu(menu menuArray[], int size, Employee emps[10], int &empCount)
+    {
     int current = 0;
 
     while (true)
@@ -128,14 +129,47 @@ void runMenu(menu menuArray[], int size)
         }
         else if (key == 3)
         {
-            if (current == 0)
+
+        if (current == 0)
+        {
+            clear();
+            moveTo(1, 1);
+
+         if (empCount >= 10)
+         {
+                cout << "Employee storage is full!" << endl;
+         }
+         else
             {
-              
-              
-            }
+                  Employee emp;
+
+                    cout << "Enter Employee ID: ";
+                    cin >> emp.id;
+
+                    cout << "Enter Employee Name: ";
+                     cin >> emp.name;
+
+                    cout << "Enter Employee Salary: ";
+                     cin >> emp.salary;
+
+                    emp.addEmployee(emp.id, emp.name, emp.salary);
+
+                    emps[empCount] = emp;
+                    empCount++;
+
+                    cout << "Employee added successfully!" << endl;
+             }
+
+    cout << "Press any key to continue...";
+    getch_linux();
+}
             else if (current == 1)
             {
-                
+                clear();
+                moveTo(1, 1);
+                Employee::displayEmployee(emps, empCount);
+                cout << "Press any key to continue...";
+                getch_linux();
             }
             else if (current == 2)
             {

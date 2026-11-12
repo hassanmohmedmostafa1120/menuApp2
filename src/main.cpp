@@ -1,7 +1,7 @@
 #include <cstdio>
 #include "../include/termtext.hpp"
 #include "../include/readhelper.hpp"
-
+#include "../include/employee.hpp"
 using namespace std;
 using namespace advancedPrint;  
 using namespace helper;
@@ -13,10 +13,10 @@ int main() {
     menu m3 = {"Exit", 9, 20, 0};
 
     menu menuArray[3]={m1,m2,m3};
-   // Employee employees[2] = {};
    
-
-    runMenu(menuArray, 3);
+    Employee emp [10] ;
+    int empCount = 0; 
+    runMenu(menuArray, 3, emp, empCount );
 
     clear();
     moveTo(1, 1);

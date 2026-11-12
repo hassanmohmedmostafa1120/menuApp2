@@ -1,4 +1,5 @@
 #pragma once
+#include "employee.hpp"
 
 namespace advancedPrint {
 
@@ -23,6 +24,6 @@ void setColor(Color c);
 void resetColor();
 void displayMenu(menu arr[10], int size);
 int moveMenuArrow();
-void runMenu(menu menuArray[], int size);
+void runMenu(menu menuArray[], int size, Employee emp[10], int &empCount);
 
 }
